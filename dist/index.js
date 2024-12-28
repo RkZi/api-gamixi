@@ -49,8 +49,8 @@ const socket_io_1 = require("socket.io");
 const allfunctions_1 = __importDefault(require("./functions/allfunctions"));
 const serverEvents_1 = require("./serverEvents");
 require("dotenv/config");
-const privateKey = fs_1.readFileSync(path_1.resolve(__dirname, '../src/server.key'), 'utf8');
-const certificate = fs_1.readFileSync(path_1.resolve(__dirname, '../src/server.crt'), 'utf8');
+const privateKey = fs_1.default.readFileSync("server.key", "utf8");
+const certificate = fs_1.default.readFileSync("server.crt", "utf8");
 const credentials = {
     key: privateKey,
     cert: certificate,
