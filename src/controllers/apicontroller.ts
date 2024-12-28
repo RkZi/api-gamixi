@@ -88,7 +88,7 @@ export default {
                res.send({
                   status: 1,
                   msg: "SUCCESS",
-                  launch_url: `https://m.pgsoft.com/${codegame}/index.html?operator_token=Zm9saWFiZXQ=&btt=1&t=${getnewuser[0].token}&or=m.pgsoft.com&api=m.pgsoft.com`,
+                  launch_url: `https://api.gamixi.com/${codegame}/index.html?operator_token=Zm9saWFiZXQ=&btt=1&t=${getnewuser[0].token}&or=api.gamixi.com&api=api.gamixi.com`,
                   user_code: getnewuser[0].username,
                   user_balance: getnewuser[0].saldo,
                   user_created: true,
@@ -107,7 +107,7 @@ export default {
             res.send({
                status: 1,
                msg: "SUCCESS",
-               launch_url: `https://m.pgsoft.com/${codegame}/index.html?operator_token=Zm9saWFiZXQ=&btt=1&t=${user[0].token}&or=m.pgsoft.com&api=m.pgsoft.com`,
+               launch_url: `https://api.gamixi.com/${codegame}/index.html?operator_token=Zm9saWFiZXQ=&btt=1&t=${user[0].token}&or=api.gamixi.com&api=api.gamixi.com`,
                user_code: user[0].username,
                user_balance: user[0].saldo,
                user_created: false,

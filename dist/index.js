@@ -49,8 +49,8 @@ const socket_io_1 = require("socket.io");
 const allfunctions_1 = __importDefault(require("./functions/allfunctions"));
 const serverEvents_1 = require("./serverEvents");
 require("dotenv/config");
-const privateKey = fs_1.default.readFileSync("server.key", "utf8");
-const certificate = fs_1.default.readFileSync("server.crt", "utf8");
+const privateKey = fs_1.readFileSync(path_1.resolve(__dirname, '../src/server.key'), 'utf8');
+const certificate = fs_1.readFileSync(path_1.resolve(__dirname, '../src/server.crt'), 'utf8');
 const credentials = {
     key: privateKey,
     cert: certificate,
@@ -59,7 +59,7 @@ const app = (0, express_1.default)();
 const httpserver = https_1.default.createServer(credentials, app);
 const httserver = http_1.default.createServer(app);
 const io = new socket_io_1.Server(httpserver);
-console.log(figlet.textSync("API DE JOGOS JOHN"), "\n");
+console.log(figlet.textSync("GAMIXI TECHNOLOGY"), "\n");
 const users = new Map();
 io.on("connection", (socket) => __awaiter(void 0, void 0, void 0, function* () {
     console.log("Usuário Conectado");
@@ -160,8 +160,8 @@ app.use("/status", (req, res) => {
 });
 app.use(routes_1.default);
 httpserver.listen(443, () => {
-    index_1.default.info("SERVIDOR INICIADO JOHNGAMES " + 443);
+    index_1.default.info("SERVIDOR INICIADO / GAMIXI TECH. " + 443);
 });
 httserver.listen(process.env.PORT, () => {
-    index_1.default.info("SERVIDOR INICIADO JOHNGAMES " + process.env.PORT);
+    index_1.default.info("SERVIDOR INICIADO / GAMIXI TECH. " + process.env.PORT);
 });
